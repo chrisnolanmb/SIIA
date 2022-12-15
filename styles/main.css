@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+body{
+    background-color: #e1e1e1;
+    font-family: 'Poppins', sans-serif;
+}
+
+.fondoLogin{
+    background-image: url("../img/fondo3.png");
+    width: 100vw;
+    height: 100vh;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    position: relative;
+    
+}
+.formLogin{
+    background-color: #e1e1e1;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: inset;
+
+    
+    width: 422px;
+    height: 594px;
+    z-index: 1;
+    
+  /* centrar vertical y horizontalmente */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -297px 0 0 -211px;
+
+    padding: 32px 16px 16px 16px;
+    
+}
+
+.formLogin h3{
+    color: #000;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0px 0px 28px 0px;
+}
+.formLogin form input{
+    width: 100%;
+    height: 66px;
+    border-radius: 20px;
+    border-color: rgba(0, 0, 0, 0.5);
+    background-color: #e1e1e1;
+    margin: 10px 0px 28px 0px;
+
+    padding: 0px 0px 0px 16px;
+}
+.formLogin form label{
+    font-weight: 400;
+    text-align: start;
+}
+
+.formLogin form .enviar{
+    background-color: #30683B;
+    margin: 28px 0px 28px 0px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-color: #30683B;
+}
+
+.formLogin h4{
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (max-width: 480px) {
+    .formLogin{
+        background-color: #e1e1e1;
+        border-radius: 30px 30px 0px 0px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+        box-shadow: inset;
+    
+        
+        width: 100vw;
+        height: 600px;
+        z-index: 1;
+        
+      /* centrar vertical y horizontalmente */
+        position: sticky;
+        bottom: 0vh;
+        left: 0%;
+        margin: 0px 0px 0px 0px;
+    
+        padding: 32px 16px 16px 16px;
+        
+    }
+    
+    .formLogin h3{
+        color: #000;
+        font-size: 20px;
+        font-weight: 500;
+        text-align: center;
+        margin: 0px 0px 28px 0px;
+    }
+    .formLogin form input{
+        width: 100%;
+        height: 66px;
+        border-radius: 20px;
+        border-color: rgba(0, 0, 0, 0.5);
+        background-color: #e1e1e1;
+        margin: 10px 0px 28px 0px;
+    
+        padding: 0px 0px 0px 16px;
+    }
+    .formLogin form label{
+        font-weight: 400;
+        text-align: start;
+    }
+    
+    .formLogin form .enviar{
+        background-color: #30683B;
+        margin: 28px 0px 28px 0px;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        border-color: #30683B;
+    }
+    
+    .formLogin h4{
+        text-align: center;
+        font-size: 14px;
+    }
+}
