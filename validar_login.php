@@ -24,4 +24,6 @@ if (mysqli_num_rows($validar_login) > 0) {
         ";
     #header('Location : login.html');
     exit;
+
+    echo '';
 }
