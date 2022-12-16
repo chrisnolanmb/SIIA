@@ -66,10 +66,45 @@ body{
     font-weight: 500;
     border-color: #30683B;
 }
+.enviarActivado{
+    background-color: #30683B;
+    margin: 28px 0px 28px 0px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-color: #30683B;
 
+    width: 100%;
+    height: 66px;
+    border-radius: 20px;
+    margin: 10px 0px 28px 0px;
+
+    padding: 0px 0px 0px 16px;
+}
+.enviarDesactivado{
+    background-color: #88A48E;
+    margin: 28px 0px 28px 0px;
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    border-color: #88A48E;
+
+    width: 100%;
+    height: 66px;
+    border-radius: 20px;
+    margin: 10px 0px 28px 0px;
+
+    padding: 0px 0px 0px 16px;
+
+}
 .formLogin h4{
     text-align: center;
     font-size: 14px;
+}
+.recuadro{
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
 }
 
 @media (max-width: 480px) {
