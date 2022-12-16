@@ -108,13 +108,12 @@ body{
 }
 .circulo{
     border-radius: 100%;
-    background-color: #000;
+    background-color: #fff;
     width: 30vh;
     height: 30vh;
     margin: 10px;
-    position: relative;
+    position: static;
     display: flex;
-    left: 30vh;
     border: 10px solid #fa5903;
 
 }
@@ -178,7 +177,7 @@ body{
     }
     .circulo{
         border-radius: 100%;
-        background-color: #000;
+        background-color: #fff;
         width: 40vw;
         height: 40vw;
         margin: 10px;
