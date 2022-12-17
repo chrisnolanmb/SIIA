@@ -14,6 +14,19 @@ if(!isset($_SESSION['usuario_logged'])) {
 $user = $_SESSION['usuario_logged'];
 //echo $user;
 
+$quer_name = "SELECT DISTINCT
+a_name AS Nombre
+
+FROM
+    inscripcion I
+        JOIN
+    alumno A ON I.id_alumno = A.matricula
+        
+        AND id_alumno = '$user'
+;";
+
+
+
 $query_datos_personales = "SELECT 
     Nombre_materia AS Asignatura,
      Nombre AS Profesor,
@@ -33,12 +46,14 @@ FROM
 ;";
 
 $result_query_datos_personales = mysqli_query($conexion, $query_datos_personales) or die("Bad query: $query_datos_personales");
+
+$result_query_name = mysqli_query($conexion,$quer_name) or die("Bad query: $quer_name");
+
 // session_destroy();
 
-// while($row = mysqli_fetch_assoc($result_query_datos_personales)){
-//   $promedio = $row['Promedio'];
-//   $conteo = $row['Conteo'];
-// }
+while($row = mysqli_fetch_assoc($result_query_name)){
+  $nombre = $row['Nombre'];
+}
 
 // session_destroy();
 ?>
@@ -111,8 +126,8 @@ $result_query_datos_personales = mysqli_query($conexion, $query_datos_personales
               <img src="img/student.png" alt="" style="border-radius: 100%;">
               
             </div>
-            Daniel Jossu Romero García <br>
-            1436018c
+            <?php echo $nombre?> <br>
+            <?php echo $user ?>
           </div>
 
         </div>
