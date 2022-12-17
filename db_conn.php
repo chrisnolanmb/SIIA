@@ -1,7 +1,7 @@
 <?php
  $conexion = mysqli_connect("localhost", "root", "root", "siia");
  if($conexion){
-    echo "Connection successful";
+   //  echo "Connection successful";
     
  }else{
  echo "Connection failed";

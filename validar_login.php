@@ -3,6 +3,7 @@ session_start();
 include 'db_conn.php';
 
 $usuario = $_POST['matricula'];
+// $user = $_SET['matricula'];
 $password = $_POST['contrasenia'];
 
 
