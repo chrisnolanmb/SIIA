@@ -1,3 +1,26 @@
+<?php
+session_start();
+if(!isset($_SESSION['usuario_logged'])) {
+    echo '
+      <script> 
+        alert("You are not logged!");
+        window.location.href = "login.php";
+      </script>
+    ';
+    // header("location:login.html");
+    session_destroy();
+    die();
+  
+}
+
+$test = 115;
+// session_destroy();
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,11 +49,14 @@
                 <a class="nav-link active" aria-current="page" href="#"><b>Calificaciones</b></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="reinscripcion.html">Reinscripción</a>
+                <a class="nav-link active" href="reinscripcion.php">Reinscripción</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="datosPersonales.html">Datos personales</a>
+                <a class="nav-link active" href="datosPersonales.php">Datos personales</a>
               </li>
+              <li class="nav-item">
+            <a class="nav-link active" href="cerrarSesion.php">Cerrar sesion</a>
+          </li>
               <li class="nav-item">
                 <a class="nav-link active" href="#"><br></a>
               </li>
@@ -133,3 +159,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

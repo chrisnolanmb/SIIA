@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION['usuario_logged'])) {
+   
+    header("location:calificaciones.php");
+}
+// session_destroy();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -31,7 +40,7 @@
                 
             </form>
             <h4>
-                <a href="calificaciones.html">
+                <a href="calificaciones.php">
                     ¿Olvidaste la constraseña?
                 </a>
             </h4>

@@ -1,3 +1,18 @@
+<?php
+session_start();
+if(!isset($_SESSION['usuario_logged'])) {
+    echo '
+      <script> 
+        alert("You are not logged!");
+      </script>
+    ';
+    header("location:login.php");
+    session_destroy();
+    die();
+}
+// session_destroy();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,7 +29,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg  navbar-dark" style=" font-family: 'Poppins', sans-serif; position: sticky; top: 0px; padding: 0px;" >
         <div class="container-fluid" style="background-color: #30683B; border-radius: 0px 0px 20px 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="calificaciones.php">
                 <img src="img/esiiaSinSombra.png" alt="Bootstrap" width="120">
               </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="border: none;">
@@ -23,14 +38,17 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="calificaciones.html">Calificaciones</a>
+                <a class="nav-link active" aria-current="page" href="calificaciones.php">Calificaciones</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="reinscripcion.html">Reinscripción</a>
+                <a class="nav-link active" href="reinscripcion.php">Reinscripción</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="#"><b>Datos personales</b></a>
               </li>
+              <li class="nav-item">
+            <a class="nav-link active" href="cerrarSesion.php">Cerrar sesion</a>
+          </li>
               <li class="nav-item">
                 <a class="nav-link active" href="#"><br></a>
               </li>
