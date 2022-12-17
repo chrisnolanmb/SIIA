@@ -1,4 +1,5 @@
 <?php
+include 'db_conn.php';
 session_start();
 if(!isset($_SESSION['usuario_logged'])) {
     echo '
@@ -10,6 +11,35 @@ if(!isset($_SESSION['usuario_logged'])) {
     session_destroy();
     die();
 }
+$user = $_SESSION['usuario_logged'];
+//echo $user;
+
+$query_datos_personales = "SELECT 
+    Nombre_materia AS Asignatura,
+     Nombre AS Profesor,
+	   Creditos
+
+FROM
+    inscripcion I
+        JOIN
+    profesor P ON I.id_profesor = P.num_empleado
+        JOIN
+    alumno A ON I.id_alumno = A.matricula
+        JOIN
+    alta_materias M ON I.materia = M.id_materia
+        JOIN
+    mapa_curricular MP ON M.Clave = MP.Clave
+        AND id_alumno = '$user'
+;";
+
+$result_query_datos_personales = mysqli_query($conexion, $query_datos_personales) or die("Bad query: $query_datos_personales");
+// session_destroy();
+
+// while($row = mysqli_fetch_assoc($result_query_datos_personales)){
+//   $promedio = $row['Promedio'];
+//   $conteo = $row['Conteo'];
+// }
+
 // session_destroy();
 ?>
 
@@ -98,20 +128,41 @@ if(!isset($_SESSION['usuario_logged'])) {
                         <table class="table">
                             <thead>
                               <tr>
-                                <th scope="col">Carga de Materias</th>
+                                <th scope="col">Asignatura</th>
+                                <th scope="col">Profesor</th>
                                 <th scope="col">Créditos</th>
+                                <th scope="col">Periodo</th>
+
+
                                 
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
+                            <?php while($row = mysqli_fetch_object($result_query_datos_personales)){
+                                        echo "
+                                        <tr>
+                                          <td>$row->Asignatura</td>
+                                          <td>$row->Profesor</td>
+                                          <td>$row->Creditos</td>
+                                          <td>$row->Periodo</td>
+                                          
+                                        </tr>";
+}
+                            ?>
+
+
+
+
+
+
+                              <!-- <tr>
                                 <td scope="row">Física Moderna</td>
                                 <td>10</td>
                               </tr>
                               <tr>
                                 <td scope="row">Cálculo Complejo</td>
                                 <td>6</td>
-                              </tr>
+                              </tr> -->
                               
                             </tbody>
                         </table>

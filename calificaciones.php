@@ -19,7 +19,7 @@ if (!isset($_SESSION['usuario_logged'])) {
 $user = $_SESSION['usuario_logged'];
 
 
-$query = "SELECT 
+$query_promedio = "SELECT 
 ROUND(AVG(Calificacion),2) AS Promedio, COUNT(Calificacion) AS Conteo
 FROM
 calificaciones C
@@ -35,14 +35,12 @@ mapa_curricular MP ON M.Clave = MP.Clave
     AND I.materia = C.id_materia
 ;";
 
-$result = mysqli_query($conexion, $query) or die("Bad query: $query");
+$result_query_promedio = mysqli_query($conexion, $query_promedio) or die("Bad query: $query_promedio");
 // session_destroy();
 
-while($row = mysqli_fetch_assoc($result)){
+while($row = mysqli_fetch_assoc($result_query_promedio)){
   $promedio = $row['Promedio'];
   $conteo = $row['Conteo'];
-  
-  // echo"<tr><td>{$row['Promedio']}</td></tr>";
 }
 ?>
 
