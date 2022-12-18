@@ -186,14 +186,14 @@ $result_query_calificaciones = mysqli_query($conexion, $query_calificaciones) or
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-            <table class="table">
+            <table class="table" style="overflow: hidden;">
                 <thead>
-                  <tr>
+                  <tr style="overflow: hidden;">
                     <th scope="col">Clave</th>
                     <th scope="col">Asignatura</th>
                     <th scope="col">Profesor</th>
                     <th scope="col">Ciclo</th>
-                    <th scope="col">Calificacion</th>
+                    <th scope="col" style="overflow: hidden;" class="calif">Calificación</th>
                   </tr>
                 </thead>
                 <tbody>

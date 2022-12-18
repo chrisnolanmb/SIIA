@@ -123,7 +123,7 @@ $result_materias_disponibles = mysqli_query($conexion, $query_materias_disponibl
 
 
           </div>
-          <button  class="enviarActivado"> Inscribir</b></button>
+          <button onclick="inscribir()" class="enviarActivado"> Inscribir</b></button>
         </div>
         <div class="col-sm-6" class="recuadro" style="background-color: none;">
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
