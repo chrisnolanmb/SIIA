@@ -120,7 +120,7 @@ $result_materias_disponibles = mysqli_query($conexion, $query_materias_disponibl
               
               <div class="list" style="padding: 16px;">
                 <h3>Materias selecionadas:</h3>
-                <ul class="done">
+                <ul class="done" style="list-style-image: url('img/minus.png');">
                 </ul>
              </div>
 
@@ -137,7 +137,7 @@ $result_materias_disponibles = mysqli_query($conexion, $query_materias_disponibl
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
           <div class="list" style="margin: 16px;">
             <h3>Materias aprobadas:</h3>
-            <ul class="todo" style="cursor: crosshair">
+            <ul class="todo" style="list-style-image: url('img/plus.png');">
               <li>Calculo</li>
               <li>Álgebra</li>
               <li>Física Nuclear</li>
