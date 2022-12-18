@@ -198,7 +198,7 @@ $result_query_calificaciones = mysqli_query($conexion, $query_calificaciones) or
                 </thead>
                 <tbody>
                   <?php while ($row = mysqli_fetch_object($result_query_calificaciones)) {
-                    if ($row->Periodo == "23/23") {
+                    if ($row->Periodo == "22/23") {
                       echo "
                                         <tr>
                                           <td>$row->Nomenclatura</td>
@@ -235,7 +235,7 @@ $result_query_calificaciones = mysqli_query($conexion, $query_calificaciones) or
                 </thead>
                 <tbody>
                   <?php while ($row = mysqli_fetch_object($result_query_calificaciones)) {
-                    if ($row->Periodo == "23/23") {
+                    if ($row->Periodo == "22/23") {
                       echo "
                                         <tr>
                                           <td>$row->Nomenclatura</td>

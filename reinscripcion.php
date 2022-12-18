@@ -25,7 +25,7 @@ mapa_curricular MP ON MP.Clave = A.Nomenclatura
 profesor P ON P.num_empleado = A.id_profesor
     JOIN
 inscripcion I ON A.id_materia = I.Materia
-    AND id_alumno = '1339846K'
+    AND id_alumno = '$user'
 
 
 ;";
@@ -94,9 +94,6 @@ $result_materias_disponibles = mysqli_query($conexion, $query_materias_disponibl
         <h3 style="color: rgba(0, 0, 0, 1.0);">
           Reinscripción
         </h3>
-
-
-
         Lic. En Ciencias Físico Matemáticas
       </div>
       <div class="col-md-auto text-center">
@@ -110,43 +107,51 @@ $result_materias_disponibles = mysqli_query($conexion, $query_materias_disponibl
     </div>
     <br>
 
-    
+
     <div class="container">
-      
+
       <div class="row ">
         <div class="col-sm-6 ">
           <div class="recuadro">
             <div class="wrapper">
-              
+
               <div class="list" style="padding: 16px;">
                 <h3>Materias selecionadas:</h3>
                 <ul class="done" style="list-style-image: url('img/minus.png');">
                 </ul>
-             </div>
+              </div>
 
             </div>
-            
+
 
 
           </div>
-          <button class="enviarActivado"> Inscribir</b></button>
+          <button  class="enviarActivado"> Inscribir</b></button>
         </div>
-
-
         <div class="col-sm-6" class="recuadro" style="background-color: none;">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
           <div class="list" style="margin: 16px;">
             <h3>Materias aprobadas:</h3>
             <ul class="todo" style="list-style-image: url('img/plus.png');">
-              <li>Calculo</li>
+
+              <?php
+              $i = 1;
+              while ($row = mysqli_fetch_object($result_materias_disponibles)) {
+                echo "
+                                          <li name='test'>$row->Nombre_materia </li>
+                                        ";
+                $i++;
+              }
+              ?>
+              <!-- <li>Calculo</li>
               <li>Álgebra</li>
               <li>Física Nuclear</li>
               <li>Optica</li>
               <li>Laboratorio</li>
-              <li>Didáctica</li>
+              <li>Didáctica</li> -->
             </ul>
           </div>
-         
+
         </div>
 
       </div>
