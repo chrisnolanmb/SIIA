@@ -30,7 +30,7 @@ FROM
 $query_datos_personales = "SELECT 
     Nombre_materia AS Asignatura,
      Nombre AS Profesor,
-	   Creditos
+	   Creditos, Ciclo, image
 
 FROM
     inscripcion I
@@ -41,7 +41,7 @@ FROM
         JOIN
     alta_materias M ON I.materia = M.id_materia
         JOIN
-    mapa_curricular MP ON M.Clave = MP.Clave
+    mapa_curricular MP ON M.Nomenclatura = MP.Clave
         AND id_alumno = '$user'
 ;";
 
@@ -57,6 +57,8 @@ while($row = mysqli_fetch_assoc($result_query_name)){
 
 // session_destroy();
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -123,8 +125,16 @@ while($row = mysqli_fetch_assoc($result_query_name)){
 
           <div class="col-sm-3 text-center">
             <div class="circulo ">
-              <img src="img/student.png" alt="" style="border-radius: 100%;">
+
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+        Select image to upload:
+        <input type="file" name="image"/>
+        <input type="submit" name="submit_image" value="UPLOAD"/>
+    </form>
+              <!-- <img src="data:iamge/jpg:bsae64 img/student.png" alt="" style="border-radius: 100%;"> -->
+              <img src='vista.php' alt='Img blob desde MySQL' width="600" /> 
               
+                           
             </div>
             <?php echo $nombre?> <br>
             <?php echo $user ?>
@@ -146,7 +156,7 @@ while($row = mysqli_fetch_assoc($result_query_name)){
                                 <th scope="col">Asignatura</th>
                                 <th scope="col">Profesor</th>
                                 <th scope="col">Créditos</th>
-                                <th scope="col">Periodo</th>
+                                <th scope="col">Ciclo</th>
 
 
                                 
@@ -159,7 +169,7 @@ while($row = mysqli_fetch_assoc($result_query_name)){
                                           <td>$row->Asignatura</td>
                                           <td>$row->Profesor</td>
                                           <td>$row->Creditos</td>
-                                          <td>$row->Periodo</td>
+                                          <td>$row->Ciclo</td>
                                           
                                         </tr>";
 }

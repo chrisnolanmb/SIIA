@@ -30,7 +30,7 @@ profesor P ON C.id_profesor = P.num_empleado
     JOIN
 alta_materias M ON C.id_materia = M.id_materia
     JOIN
-mapa_curricular MP ON M.Clave = MP.Clave
+mapa_curricular MP ON M.Nomenclatura = MP.Clave
     AND C.alumno_id = '$user'
     AND I.materia = C.id_materia
 ;";
@@ -38,10 +38,27 @@ mapa_curricular MP ON M.Clave = MP.Clave
 $result_query_promedio = mysqli_query($conexion, $query_promedio) or die("Bad query: $query_promedio");
 // session_destroy();
 
-while($row = mysqli_fetch_assoc($result_query_promedio)){
+while ($row = mysqli_fetch_assoc($result_query_promedio)) {
   $promedio = $row['Promedio'];
   $conteo = $row['Conteo'];
 }
+
+
+$query_calificaciones = "SELECT 
+Nomenclatura, Nombre_materia, Nombre, Periodo, Calificacion
+FROM
+calificaciones C
+    JOIN
+inscripcion I ON I.Materia = C.id_materia
+    JOIN
+profesor P ON P.num_empleado = C.id_profesor
+    JOIN
+alta_materias A ON A.id_materia = I.Materia
+    JOIN
+mapa_curricular MP ON MP.Clave = A.Nomenclatura
+    AND alumno_id = '1339846K';";
+
+$result_query_calificaciones = mysqli_query($conexion, $query_calificaciones) or die("Bad query: $query_calificaciones");
 ?>
 
 
@@ -136,29 +153,34 @@ while($row = mysqli_fetch_assoc($result_query_promedio)){
               <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">Materia</th>
-                    <th scope="col">Calificación</th>
-                    <th scope="col">Examen</th>
+                    <th scope="col">Clave</th>
+                    <th scope="col">Asignatura</th>
+                    <th scope="col">Profesor</th>
+                    <th scope="col">Ciclo</th>
+                    <th scope="col">Calificacion</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">Física Moderna</th>
-                    <td>10</td>
-                    <td>Regular</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Cálculo Complejo</th>
-                    <td>6</td>
-                    <td style="color: red;">Extra</td>
-                  </tr>
-
+                  <?php while ($row = mysqli_fetch_object($result_query_calificaciones)) {
+                    if ($row->Periodo == "22/23") {
+                      echo "
+                                        <tr>
+                                          <td>$row->Nomenclatura</td>
+                                          <td>$row->Nombre_materia</td>
+                                          <td>$row->Nombre</td>
+                                          <td>$row->Periodo</td>
+                                          <td>$row->Calificacion</td>
+                                        </tr>";
+                    }
+                  }
+                  ?>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-        <div class="accordion-item">
+
+       <div class="accordion-item">
           <h2 class="accordion-header" id="headingTwo">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
               Ciclo <b> 22/22</b>
@@ -166,7 +188,32 @@ while($row = mysqli_fetch_assoc($result_query_promedio)){
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Clave</th>
+                    <th scope="col">Asignatura</th>
+                    <th scope="col">Profesor</th>
+                    <th scope="col">Ciclo</th>
+                    <th scope="col">Calificacion</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php while ($row = mysqli_fetch_object($result_query_calificaciones)) {
+                    if ($row->Periodo == "23/23") {
+                      echo "
+                                        <tr>
+                                          <td>$row->Nomenclatura</td>
+                                          <td>$row->Nombre_materia</td>
+                                          <td>$row->Nombre</td>
+                                          <td>$row->Periodo</td>
+                                          <td>$row->Calificacion</td>
+                                        </tr>";
+                    }
+                  }
+                  ?>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -178,7 +225,32 @@ while($row = mysqli_fetch_assoc($result_query_promedio)){
           </h2>
           <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Clave</th>
+                    <th scope="col">Asignatura</th>
+                    <th scope="col">Profesor</th>
+                    <th scope="col">Ciclo</th>
+                    <th scope="col">Calificacion</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php while ($row = mysqli_fetch_object($result_query_calificaciones)) {
+                    if ($row->Periodo == "23/23") {
+                      echo "
+                                        <tr>
+                                          <td>$row->Nomenclatura</td>
+                                          <td>$row->Nombre_materia</td>
+                                          <td>$row->Nombre</td>
+                                          <td>$row->Periodo</td>
+                                          <td>$row->Calificacion</td>
+                                        </tr>";
+                    }
+                  }
+                  ?>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

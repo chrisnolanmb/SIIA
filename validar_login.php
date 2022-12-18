@@ -7,7 +7,7 @@ $usuario = $_POST['matricula'];
 $password = $_POST['contrasenia'];
 
 
-$validar_login = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '$usuario' AND password = '$password'");
+$validar_login = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '$usuario' OR maestro = '$usuario' AND password = '$password'");
 
 if (mysqli_num_rows($validar_login) > 0) {
     $_SESSION['usuario_logged'] = $usuario;
