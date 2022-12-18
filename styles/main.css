@@ -106,7 +106,7 @@ body{
     border-radius: 20px;
     width: 100%;
 }
-.circulo{
+/* .circulo{
     border-radius: 100%;
     background-color: #fff;
     width: 30vh;
@@ -116,6 +116,16 @@ body{
     display: flex;
     border: 10px solid #fa5903;
 
+} */
+.img{
+    border-radius: 100%;
+    background-color: #fff;
+    width: 30vh;
+    height: 30vh;
+    margin: 10px;
+    position: static;
+    display: flex;
+    border: 10px solid #fa5903;
 }
 ul {
     list-style: none;
@@ -183,7 +193,7 @@ ul {
         text-align: center;
         font-size: 14px;
     }
-    .circulo{
+    .img{
         border-radius: 100%;
         background-color: #fff;
         width: 40vw;

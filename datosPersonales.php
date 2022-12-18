@@ -142,7 +142,7 @@ while ($row = mysqli_fetch_assoc($result_query_name)) {
           $result_image = $conexion->query($query_image) or die("Bad query: $query_image");
           while ($row = $result_image->fetch_assoc()) {
           ?>
-            <img src="data:image/jpeg;base64,<?php echo base64_encode($row['image']); ?>" width="275" style="border-radius: 100%;">
+            <img  class="img" src="data:image/jpeg;base64,<?php echo base64_encode($row['image']); ?>" width="275" style="border-radius: 100%;">
           <?php
           }
           ?>
