@@ -56,7 +56,7 @@ profesor P ON P.num_empleado = C.id_profesor
 alta_materias A ON A.id_materia = I.Materia
     JOIN
 mapa_curricular MP ON MP.Clave = A.Nomenclatura
-    AND alumno_id = '1339846K';";
+    AND alumno_id = '$user';";
 
 $result_query_calificaciones = mysqli_query($conexion, $query_calificaciones) or die("Bad query: $query_calificaciones");
 ?>
