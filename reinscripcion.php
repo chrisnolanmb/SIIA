@@ -16,16 +16,13 @@ if (!isset($_SESSION['usuario_logged'])) {
 $user = $_SESSION['usuario_logged'];
 
 $query_materias_disponibles = "SELECT 
-Nomenclatura, Ciclo, Nombre_materia, Requisitos, Nombre, Creditos
+Nombre_materia
 FROM
 alta_materias A
     JOIN
 mapa_curricular MP ON MP.Clave = A.Nomenclatura
     JOIN
 profesor P ON P.num_empleado = A.id_profesor
-    JOIN
-inscripcion I ON A.id_materia = I.Materia
-    AND id_alumno = '$user'
 
 
 ;";
