@@ -117,6 +117,14 @@ body{
     border: 10px solid #fa5903;
 
 }
+ul {
+    list-style: none;
+}
+
+
+
+
+
 
 @media (max-width: 480px) {
     .formLogin{

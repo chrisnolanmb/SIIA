@@ -163,7 +163,6 @@ while ($row = mysqli_fetch_assoc($result_query_name)) {
                   <th scope="col">Asignatura</th>
                   <th scope="col">Profesor</th>
                   <th scope="col">Créditos</th>
-                  <th scope="col">Ciclo</th>
 
 
 
@@ -174,9 +173,8 @@ while ($row = mysqli_fetch_assoc($result_query_name)) {
                   echo "
                                         <tr>
                                           <td>$row->Asignatura</td>
-                                          <td>$row->Profesor</td>
+                                          <td style='overflow:hidden;'>$row->Profesor</td>
                                           <td>$row->Creditos</td>
-                                          <td>$row->Ciclo</td>
                                           
                                         </tr>";
                 }

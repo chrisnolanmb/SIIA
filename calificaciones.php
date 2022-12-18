@@ -156,7 +156,6 @@ $result_query_calificaciones = mysqli_query($conexion, $query_calificaciones) or
                     <th scope="col">Clave</th>
                     <th scope="col">Asignatura</th>
                     <th scope="col">Profesor</th>
-                    <th scope="col">Ciclo</th>
                     <th scope="col">Calificacion</th>
                   </tr>
                 </thead>
@@ -166,9 +165,8 @@ $result_query_calificaciones = mysqli_query($conexion, $query_calificaciones) or
                       echo "
                                         <tr>
                                           <td>$row->Nomenclatura</td>
-                                          <td>$row->Nombre_materia</td>
+                                          <td style='overflow:hidden;'>$row->Nombre_materia</td>
                                           <td>$row->Nombre</td>
-                                          <td>$row->Periodo</td>
                                           <td>$row->Calificacion</td>
                                         </tr>";
                     }
