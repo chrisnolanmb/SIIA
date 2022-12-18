@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 18, 2022 at 10:35 PM
+-- Generation Time: Dec 18, 2022 at 11:10 PM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -124,7 +124,8 @@ CREATE TABLE `inscripcion` (
 INSERT INTO `inscripcion` (`id_inscripcion`, `Ciclo`, `id_alumno`, `Materia`, `id_profesor`, `fecha`) VALUES
 (1, '23/23', '1339846K', 1, '225588993T', '2022-12-15 02:10:59'),
 (9, '23/23', '1339846K', 4, '225588993T', '2022-12-15 03:18:34'),
-(10, '23/23', '1339846K', 5, '112233441K', '2022-12-15 03:18:34');
+(10, '23/23', '1339846K', 5, '112233441K', '2022-12-15 03:18:34'),
+(11, '23/23', '1436018C', 4, '225588993T', '2022-12-18 23:09:24');
 
 -- --------------------------------------------------------
 
@@ -453,7 +454,7 @@ ALTER TABLE `calificaciones`
 -- AUTO_INCREMENT for table `inscripcion`
 --
 ALTER TABLE `inscripcion`
-  MODIFY `id_inscripcion` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_inscripcion` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
