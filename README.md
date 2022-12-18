@@ -6,7 +6,5 @@
 <ol>
   <li>1339846K, password: test1234</li>
   <li>1436018C, password: test1234</li>
-  <li>Third item</li>
-  <li>Fourth item</li>
 </ol>
 
