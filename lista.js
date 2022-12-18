@@ -7,3 +7,8 @@ $(document).ready(function(){
        $(this).appendTo('.todo');
     });
 });
+
+function inscribir() {
+   console.log('Usuario Inscrito');
+   alert("Alumno inscrito");
+ };

@@ -130,7 +130,9 @@ body{
 ul {
     list-style: none;
 }
-
+.calif{
+    color: #000;
+}
 
 
 
@@ -203,6 +205,9 @@ ul {
         display: flex;
         left: 25vw;
         
+    }
+    .calif{
+        font-size: 10px;
     }
 }
 
