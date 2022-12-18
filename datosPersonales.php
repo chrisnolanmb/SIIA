@@ -130,11 +130,11 @@ while ($row = mysqli_fetch_assoc($result_query_name)) {
       <div class="col-sm-3 text-center">
         <div class="circulo ">
 
-          <form action="upload.php" method="post" enctype="multipart/form-data">
+          <!-- <form action="upload.php" method="post" enctype="multipart/form-data">
             Select image to upload:
             <input type="file" name="image" />
             <input type="submit" name="submit_image" value="UPLOAD" />
-          </form>
+          </form> -->
           <?php
           include("db_conn.php");
           $user = $_SESSION['usuario_logged'];
@@ -142,7 +142,7 @@ while ($row = mysqli_fetch_assoc($result_query_name)) {
           $result_image = $conexion->query($query_image) or die("Bad query: $query_image");
           while ($row = $result_image->fetch_assoc()) {
           ?>
-            <img src="data:image/jpeg;base64,<?php echo base64_encode($row['image']); ?>" style="border-radius: 100%;">
+            <img src="data:image/jpeg;base64,<?php echo base64_encode($row['image']); ?>" width="275" style="border-radius: 100%;">
           <?php
           }
           ?>
